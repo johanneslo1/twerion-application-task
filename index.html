@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <!-- Website developed by Johannes Lohmann - technikclou.com -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Twerion application task</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+<body>
+<div class="container">
+    <div class="intro">
+       <div class="mobile-wrapper">
+           <div class="mobile-bottom">
+               <h1>Parts<br>With<br>Humanity</h1>
+               <h4>Lab</h4>
+           </div>
+       </div>
+        <p>We constantly update PWH to keep it as fresh and hilarious as possible. Here, In the Lab, you can help us improve The game by playing a few simivated rounds. Each round, pick the white card that's funniest In comblnalon with the black card. If nothing seems hilarious, Just click the 'none of these are funny' button.<br><br>We promise not to use your data for evil.</p>
+    </div>
+    <div class="card" id="card">
+        <form action="#">
+            <div class="form-group">
+                <label for="slider" class="form-group-label">How old are you?</label>
+                <div class="form-range">
+                    <div id="slider"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="gender" class="form-group-label">Your gender?</label>
+                <fieldset id="gender">
+                    <div class="flex-fieldset-wrapper">
+                        <div class="form-check">
+                            <input type="radio" id="gender_male" name="gender">
+                            <label for="gender_male">Male</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="gender_female" name="gender">
+                            <label for="gender_female">Female</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="gender_other" name="gender">
+                            <label for="gender_other">Other</label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="form-group">
+                <label for="times" class="form-group-label">How many times have you played Cards Against Humanity?</label>
+                <fieldset id="times">
+                    <div class="flex-fieldset-wrapper">
+                        <div class="form-check">
+                            <input type="radio" id="times_not" name="times">
+                            <label for="times_not">Haven't played</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="times_once" name="times">
+                            <label for="times_once">Once</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="times_few" name="times">
+                            <label for="times_few">A few times</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="times_many" name="times">
+                            <label for="times_many">Many times!</label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="form-group">
+                <label for="origin" class="form-group-label">Where do you live?</label>
+               <fieldset id="origin">
+                   <div class="flex-fieldset-wrapper">
+                       <div class="form-check">
+                           <input type="radio" id="origin_usa" name="origin">
+                           <label for="origin_usa">USA</label>
+                       </div>
+                       <div class="form-check">
+                           <input type="radio" id="origin_can" name="origin">
+                           <label for="origin_can">Can</label>
+                       </div>
+                       <div class="form-check">
+                           <input type="radio" id="origin_au" name="origin">
+                           <label for="origin_au">AU</label>
+                       </div>
+                       <div class="form-check">
+                           <input type="radio" id="origin_uk" name="origin">
+                           <label for="origin_uk">UK</label>
+                       </div>
+                       <div class="form-check">
+                           <input type="radio" id="origin_other_eu" name="origin">
+                           <label for="origin_other_eu">Other EU</label>
+                       </div>
+                       <div class="form-check">
+                           <input type="radio" id="origin_other" name="origin">
+                           <label for="origin_other">Other</label>
+                       </div>
+                   </div>
+               </fieldset>
+            </div>
+            <div class="form-group">
+                <button type="button">Start!</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+<script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<script
+        src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+        integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+        crossorigin="anonymous"></script>
+<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
+<script>
+    $( function() {
+        $( "#slider" ).slider({
+            min: 13,
+            max: 55,
+            slide: function(event, ui) {
+                $('span.ui-slider-handle').text(ui.value);
+            }
+        });
+        $('span.ui-slider-handle').text(13);
+    });
+
+    $(window).on('load', function(){
+        $('#card').addClass('loaded');
+    });
+</script>
+</html>
